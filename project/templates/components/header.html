@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <div class="header__inner">
+      
+      <nav>
+        <a href="/" class="logo">
+          <img src="./static/svg/farm ug_logo.svg" alt="" />
+        </a>
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+              <div class="nav-link">Добро пожаловать, {{user.first_name}}</div>
+              <a href="/register" class="nav-link">Добавить клиента</a>
+              <a class="nav-link" href="/logout">Выйти</a>
+            {% else %}
+              <a class="nav-link" href="/login">Войти</a>
+            {% endif %}
+          </ul>
+      </nav>
+    </div>
+  </div>
+</header>

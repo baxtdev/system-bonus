@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static i18n thumbnail %}
+{% block base %}
+{% block header %}
+    {% include 'components/header.html'  %}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+  <section class="main">
+    <div class="container">
+      <div class="main__inner">
+        <h2 class="main__title">Найти клиента</h2>
+        <form action="/customer" method="get">
+          <input type="number" name="search" id="search" placeholder="Введите номер клиента" />
+          <input type="submit" value="Поиск">
+        </form>
+      </div>
+  </section>
+
+  {% else %}
+  <br>
+  <br>
+  <br>
+    <center><a href="/login">Вы не авторизовались, пожалуйста авторизуйтесь</a></center>
+  {% endif %}
+    
+{% endblock %}
+{% block footer %}
+{% include 'components/footer.html'  %}
+{% endblock %}
+
+
+
+{% endblock %}

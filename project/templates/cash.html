@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static i18n thumbnail %}
+
+{% block content %}
+
+<section class="main">
+    <div class="container">
+      <div class="main__inner">
+        <h2 class="main__title">Добавить оплату</h2>
+        {% if customer.first_name %}
+        <h2 class="main__title">Пользователь {{ customer.first_name }}</h2>
+        {% else %}
+        <h2 class="main__title">Пользователь ID{{ customer.id }}</h2>
+            
+        {% endif %} 
+            <h3>ID client:{{ customer.id }}</h3>
+            <p>email:       {{ customer.email }}</p>
+              <p>gender:    {{customer.sex}}</p>
+              <p>bonus:   {{customer.bonus}}</p>
+              <p>code:      {{customer.code}}</p>
+        <div class="add__cash">
+          <form action="/add_cash" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="code" value="{{ customer.code }}" />
+            <input type="number" name="cash" placeholder="Оплата" required />
+            <input type="submit" value="Добавить платеж" />
+          </form>
+          <a href="/"><input style="background-color:coral" type="submit" value="home" id="withdraw"></a>
+        </div>
+      </div>
+  </section>
+
+    
+{% endblock %}

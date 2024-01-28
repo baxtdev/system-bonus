@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static i18n thumbnail %}
+
+{% block content %}
+
+  <section class="main">
+    <div class="container">
+      <div class="main__inner">
+        {% if customer.first_name %}
+        <h2 class="main__title">Пользователь {{ customer.first_name }}</h2>
+        {% else %}
+        <h2 class="main__title">Пользователь ID{{ customer.id }}</h2>
+            
+        {% endif %} 
+            <h3>ID client:{{ customer.id }}</h3>
+            <p>email:       {{ customer.email }}</p>
+              <p>gender:    {{customer.sex}}</p>
+              <p>bonus:   {{customer.bonus}}</p>
+              <p>code:      {{customer.code}}</p>
+            
+
+        <div class="result">
+          <div class="client">
+            <div class="client__inner">
+              <div class="client__info">
+                <form class="client__actions" action="/bonus_temp" method="get">
+                    {% csrf_token %}
+                    <input type="hidden" type="number" name="code" value="{{ customer.code }}" />
+                    <input type="submit" value="Снять баланс" id="withdraw">
+                  </form>
+                  <form class="client__actions" action="/cash_temp" method="get">
+                    {% csrf_token %}
+                    <input type="hidden" type="number" name="code" value="{{ customer.code }}" />
+                    <input type="submit" value="оплатить" id="withdraw">
+                  </form>
+                <a href="/"><input style="background-color:coral" type="submit" value="home" id="withdraw"></a>
+                <div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    
+{% endblock %}
+
+
+
+

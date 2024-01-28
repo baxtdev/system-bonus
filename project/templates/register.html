@@ -1,0 +1,29 @@
+	{% extends 'base.html' %}
+{% load static i18n thumbnail crispy_forms_tags %}
+{% block base %}
+{% block header %}
+    {% include 'components/header.html'  %}
+{% endblock %}
+
+
+
+{% block content %}
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Регистрация</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+	</form>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'components/footer.html'  %}
+{% endblock %}
+
+
+
+{% endblock %}

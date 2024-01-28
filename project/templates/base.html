@@ -1,0 +1,36 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block styles %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Фарм Юг
+        {% endblock %}
+    </title>
+</head>
+    
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert">
+            {{ message.message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% block base %}
+    {% endblock %}
+    
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

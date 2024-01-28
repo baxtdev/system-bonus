@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: beige;
+}
+
+.header__inner {
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.logo  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.link.active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(26 86 181);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.main {
+    padding-top: 20px;
+}
+
+.main__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(16 191 1);
+}
+
+input[type=submit] {
+    background-color: rgb(26 86 181);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(14, 45, 94);
+}
+
+.client__info div {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.client__info code {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(45, 46, 45);
+}
+
+.alert {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 0;
+    border-radius: 4px;
+    color: rgb(45, 46, 45);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert.alert-error {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.alert.alert-success {
+    background-color: rgb(16, 191, 1);
+    color: white;
+}
+
+.alert.alert-warning {
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+
+.alert.alert-info {
+    background-color: rgb(0, 191, 255);
+    color: white;
+}
+
+
+.btn {
+    width: 100%;
+    background-color: rgb(26 86 181);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: rgb(26 86 181);
+    color: white;
+}
+
+.requiredField {
+    color: rgb(45, 6, 6);
+}
+
+.login__inner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login__inner >  h1 {
+    text-align: center;
+    padding: 30px 0;
+}
